@@ -1,0 +1,41 @@
+name: iOS Build and Test
+
+on:
+  push:
+    branches: [ "main", "development", "production" ]
+
+jobs:
+  test-and-build:
+    name: Test & Build
+    runs-on: macos-12
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Select Xcode 14
+        run: sudo xcode-select -switch /Applications/Xcode_14.2.app
+      
+      - name: Run Unit Tests
+        run: |
+          xcodebuild test \
+            -project GPTravel.xcodeproj \
+            -scheme GPTravel \
+            -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.4' \
+            -only-testing:GPTravelTests
+      
+      - name: Run UI Tests
+        run: |
+          xcodebuild test \
+            -project GPTravel.xcodeproj \
+            -scheme GPTravel \
+            -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.4' \
+            -only-testing:GPTravelUITests
+      
+      - name: Build Project
+        run: |
+          xcodebuild build \
+            -project GPTravel.xcodeproj \
+            -scheme GPTravel \
+            -destination 'platform=iOS Simulator,name=iPhone 14,OS=16.4' \
+            CODE_SIGNING_ALLOWED=NO
