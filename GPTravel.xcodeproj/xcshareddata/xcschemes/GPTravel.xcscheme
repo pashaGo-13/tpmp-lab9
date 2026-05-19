@@ -28,6 +28,28 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CE07B29C2FBAEF620004F20D"
+               BuildableName = "GPTravelTests.xctest"
+               BlueprintName = "GPTravelTests"
+               ReferencedContainer = "container:GPTravel.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CE07B2A92FBAEF720004F20D"
+               BuildableName = "GPTravelUITests.xctest"
+               BlueprintName = "GPTravelUITests"
+               ReferencedContainer = "container:GPTravel.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
