@@ -1,0 +1,49 @@
+// Belarusian Localization
+
+// Tab Bar
+"tab.hotels" = "Гатэлі";
+"tab.bookings" = "Браніраванні";
+
+// Hotels Screen
+"hotels.title" = "Гатэлі";
+"hotel.book" = "Забраніраваць";
+"hotel.price" = "Ад ";
+
+// Booking Screen
+"booking.title" = "Браніраванне гатэля";
+"booking.dates" = "Абярыце даты";
+"booking.checkin" = "Заезд";
+"booking.checkout" = "Выезд";
+"booking.nights" = "Ночэй";
+"booking.nights.count" = "ноч(ы)";
+"booking.guests" = "Госці";
+"booking.guests.count" = "гость(ей)";
+"booking.summary" = "Кошт";
+"booking.total" = "Агульны кошт";
+"booking.confirm" = "Пацвердзіць";
+"booking.cancel" = "Адмена";
+"booking.price.details" = "Дэталі кошту";
+"booking.price.per.night" = "Кошт за ноч";
+"booking.extra.guests.note" = "За дадатковых гасцей можа спаганяцца даплата";
+"booking.success.title" = "Поспех!";
+"booking.success.message" = "Ваша браніраванне пацверджана";
+"booking.success.button" = "OK";
+"booking.view.transport" = "Абраць транспарт";
+"booking.confirmed" = "Пацверджана";
+
+// Bookings Screen
+"bookings.title" = "Мае браніраванні";
+"bookings.empty" = "Пакуль няма браніраванняў";
+"booking.id" = "ID браніравання:";
+
+// Transport Screen
+"transport.title" = "Выбар транспарту";
+"transport.type" = "Тып транспарту";
+"transport.plane" = "Самалёт";
+"transport.train" = "Цягнік";
+"transport.bus" = "Аўтобус";
+"transport.duration" = "%d г %d хв";
+"done" = "Гатова";
+
+// Loading
+"loading.hotels" = "Загрузка гатэляў...";

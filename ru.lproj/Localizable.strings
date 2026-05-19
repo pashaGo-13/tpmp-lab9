@@ -1,0 +1,49 @@
+// Russian Localization
+
+// Tab Bar
+"tab.hotels" = "Отели";
+"tab.bookings" = "Бронирования";
+
+// Hotels Screen
+"hotels.title" = "Отели";
+"hotel.book" = "Забронировать";
+"hotel.price" = "От ";
+
+// Booking Screen
+"booking.title" = "Бронирование отеля";
+"booking.dates" = "Выберите даты";
+"booking.checkin" = "Заезд";
+"booking.checkout" = "Выезд";
+"booking.nights" = "Ночей";
+"booking.nights.count" = "ночь(и)";
+"booking.guests" = "Гости";
+"booking.guests.count" = "гость(ей)";
+"booking.summary" = "Стоимость";
+"booking.total" = "Общая стоимость";
+"booking.confirm" = "Подтвердить";
+"booking.cancel" = "Отмена";
+"booking.price.details" = "Детали стоимости";
+"booking.price.per.night" = "Цена за ночь";
+"booking.extra.guests.note" = "За дополнительных гостей может взиматься доплата";
+"booking.success.title" = "Успешно!";
+"booking.success.message" = "Ваше бронирование подтверждено";
+"booking.success.button" = "OK";
+"booking.view.transport" = "Выбрать транспорт";
+"booking.confirmed" = "Подтверждено";
+
+// Bookings Screen
+"bookings.title" = "Мои бронирования";
+"bookings.empty" = "Пока нет бронирований";
+"booking.id" = "ID бронирования:";
+
+// Transport Screen
+"transport.title" = "Выбор транспорта";
+"transport.type" = "Тип транспорта";
+"transport.plane" = "Самолет";
+"transport.train" = "Поезд";
+"transport.bus" = "Автобус";
+"transport.duration" = "%d ч %d мин";
+"done" = "Готово";
+
+// Loading
+"loading.hotels" = "Загрузка отелей...";

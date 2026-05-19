@@ -1,0 +1,49 @@
+// English Localization
+
+// Tab Bar
+"tab.hotels" = "Hotels";
+"tab.bookings" = "Bookings";
+
+// Hotels Screen
+"hotels.title" = "Hotels";
+"hotel.book" = "Book Now";
+"hotel.price" = "From ";
+
+// Booking Screen
+"booking.title" = "Book Hotel";
+"booking.dates" = "Select Dates";
+"booking.checkin" = "Check-in";
+"booking.checkout" = "Check-out";
+"booking.nights" = "Nights";
+"booking.nights.count" = "night(s)";
+"booking.guests" = "Guests";
+"booking.guests.count" = "guest(s)";
+"booking.summary" = "Price Summary";
+"booking.total" = "Total Price";
+"booking.confirm" = "Confirm Booking";
+"booking.cancel" = "Cancel";
+"booking.price.details" = "Price Details";
+"booking.price.per.night" = "Price per night";
+"booking.extra.guests.note" = "Additional guests may incur extra charges";
+"booking.success.title" = "Success!";
+"booking.success.message" = "Your booking has been confirmed";
+"booking.success.button" = "OK";
+"booking.view.transport" = "Select Transport";
+"booking.confirmed" = "Confirmed";
+
+// Bookings Screen
+"bookings.title" = "My Bookings";
+"bookings.empty" = "No bookings yet";
+"booking.id" = "Booking ID:";
+
+// Transport Screen
+"transport.title" = "Transport Selection";
+"transport.type" = "Transport Type";
+"transport.plane" = "Plane";
+"transport.train" = "Train";
+"transport.bus" = "Bus";
+"transport.duration" = "%d h %d min";
+"done" = "Done";
+
+// Loading
+"loading.hotels" = "Loading hotels...";
