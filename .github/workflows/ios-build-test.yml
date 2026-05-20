@@ -11,20 +11,7 @@ jobs:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: List available simulators
-        run: xcrun simctl list devices available
-
-      - name: Run Unit Tests
-        run: |
-          xcodebuild test \
-            -project GPTravel.xcodeproj \
-            -scheme GPTravel \
-            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
-            -only-testing:GPTravelTests \
-            CODE_SIGNING_ALLOWED=NO
+      - uses: actions/checkout@v4
 
       - name: Run UI Tests
         run: |
@@ -33,4 +20,13 @@ jobs:
             -scheme GPTravel \
             -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
             -only-testing:GPTravelUITests \
+            CODE_SIGNING_ALLOWED=NO
+
+      - name: Run Unit Tests
+        run: |
+          xcodebuild test \
+            -project GPTravel.xcodeproj \
+            -scheme GPTravel \
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
+            -only-testing:GPTravelTests \
             CODE_SIGNING_ALLOWED=NO
