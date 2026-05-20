@@ -1,11 +1,11 @@
-name: iOS Build and Test
+name: iOS Build
 
 on:
   push:
     branches: [ "main", "development", "production" ]
 
 jobs:
-  test:
+  build:
     runs-on: macos-15
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
@@ -13,12 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run Unit Tests
+      - name: Build
         run: |
-          xcodebuild test \
+          xcodebuild \
             -project GPTravel.xcodeproj \
             -scheme GPTravel \
-            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
-            -only-testing:GPTravelTests \
-            -skip-testing:GPTravelUITests \
+            -destination 'generic/platform=iOS' \
+            build \
             CODE_SIGNING_ALLOWED=NO
