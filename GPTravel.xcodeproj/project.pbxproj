@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CE07B2A02FBAEF620004F20D /* GPTravelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07B29F2FBAEF620004F20D /* GPTravelTests.swift */; };
-		CE07B2AD2FBAEF720004F20D /* GPTravelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07B2AC2FBAEF720004F20D /* GPTravelUITests.swift */; };
 		CE07B2AF2FBAEF720004F20D /* GPTravelUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07B2AE2FBAEF720004F20D /* GPTravelUITestsLaunchTests.swift */; };
 		CE07B2B52FBAF1700004F20D /* HotelListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B825D2FACFAE700EE476F /* HotelListViewModel.swift */; };
 		CE07B2B62FBAF1700004F20D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B824D2FACFA6E00EE476F /* Persistence.swift */; };
@@ -67,6 +66,7 @@
 		CE9B826C2FACFC8C00EE476F /* Hotels.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE9B826B2FACFC8C00EE476F /* Hotels.plist */; };
 		CE9B826E2FACFD8200EE476F /* GPTravelApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B826D2FACFD8200EE476F /* GPTravelApp.swift */; };
 		CE9B82712FAD00AC00EE476F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CE9B82732FAD00AC00EE476F /* Localizable.strings */; };
+		CE9C6D8C2FBDDF5E00583C58 /* GPTravelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE07B2AC2FBAEF720004F20D /* GPTravelUITests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -384,6 +384,7 @@
 				CE07B2D42FBAF1F00004F20D /* Preview Assets.xcassets in Sources */,
 				CE07B2D52FBAF1F00004F20D /* Hotels.plist in Sources */,
 				CE07B2B52FBAF1700004F20D /* HotelListViewModel.swift in Sources */,
+				CE9C6D8C2FBDDF5E00583C58 /* GPTravelUITests.swift in Sources */,
 				CE07B2B62FBAF1700004F20D /* Persistence.swift in Sources */,
 				CE07B2B72FBAF1700004F20D /* CoreDataManager.swift in Sources */,
 				CE07B2B82FBAF1700004F20D /* DataModels.swift in Sources */,
@@ -425,7 +426,6 @@
 				CE07B2CF2FBAF18D0004F20D /* RegistrationView.swift in Sources */,
 				CE07B2D02FBAF18D0004F20D /* MyBookingsView.swift in Sources */,
 				CE07B2AF2FBAEF720004F20D /* GPTravelUITestsLaunchTests.swift in Sources */,
-				CE07B2AD2FBAEF720004F20D /* GPTravelUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
