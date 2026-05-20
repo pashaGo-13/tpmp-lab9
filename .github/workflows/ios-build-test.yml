@@ -1,10 +1,39 @@
-name: Build
+name: iOS Build and Test
 
-on: [push]
+on:
+  push:
+    branches: [ "main", "development", "production" ]
 
 jobs:
-  build:
+  test-and-build:
     runs-on: macos-latest
+    
     steps:
       - uses: actions/checkout@v4
-      - run: xcodebuild -project GPTravel.xcodeproj -scheme GPTravel -destination 'generic/platform=iOS' CODE_SIGNING_ALLOWED=NO
+      
+      - name: Run Unit Tests
+        run: |
+          xcodebuild test \
+            -project GPTravel.xcodeproj \
+            -scheme GPTravel \
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' \
+            -only-testing:GPTravelTests \
+            CODE_SIGNING_ALLOWED=NO
+      
+      - name: Run UI Tests
+        run: |
+          xcodebuild test \
+            -project GPTravel.xcodeproj \
+            -scheme GPTravel \
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' \
+            -only-testing:GPTravelUITests \
+            CODE_SIGNING_ALLOWED=NO
+      
+      - name: Build
+        run: |
+          xcodebuild \
+            -project GPTravel.xcodeproj \
+            -scheme GPTravel \
+            -destination 'generic/platform=iOS' \
+            build \
+            CODE_SIGNING_ALLOWED=NO
