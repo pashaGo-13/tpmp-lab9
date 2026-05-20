@@ -5,7 +5,7 @@ on:
     branches: [ "main", "development", "production" ]
 
 jobs:
-  test-and-build:
+  test:
     runs-on: macos-latest
     
     steps:
@@ -27,13 +27,4 @@ jobs:
             -scheme GPTravel \
             -destination 'platform=iOS Simulator,name=iPhone 16,OS=latest' \
             -only-testing:GPTravelUITests \
-            CODE_SIGNING_ALLOWED=NO
-      
-      - name: Build
-        run: |
-          xcodebuild \
-            -project GPTravel.xcodeproj \
-            -scheme GPTravel \
-            -destination 'generic/platform=iOS' \
-            build \
             CODE_SIGNING_ALLOWED=NO
