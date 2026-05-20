@@ -13,20 +13,56 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run UI Tests
-        run: |
-          xcodebuild test \
-            -project GPTravel.xcodeproj \
-            -scheme GPTravel \
-            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
-            -only-testing:GPTravelUITests \
-            CODE_SIGNING_ALLOWED=NO
-
       - name: Run Unit Tests
+        continue-on-error: true
+        id: unit_tests
         run: |
           xcodebuild test \
             -project GPTravel.xcodeproj \
             -scheme GPTravel \
             -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
             -only-testing:GPTravelTests \
-            CODE_SIGNING_ALLOWED=NO
+            CODE_SIGNING_ALLOWED=NO \
+            -quiet
+      
+      - name: Show failed Unit Tests
+        if: steps.unit_tests.outcome == 'failure'
+        run: |
+          echo "❌ FAILED UNIT TESTS:"
+          xcodebuild test \
+            -project GPTravel.xcodeproj \
+            -scheme GPTravel \
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
+            -only-testing:GPTravelTests \
+            CODE_SIGNING_ALLOWED=NO \
+            -verbose 2>&1 | grep -E "error:|failed:|Test case.*failed" || true
+          exit 1
+
+      - name: Run UI Tests
+        continue-on-error: true
+        id: ui_tests
+        run: |
+          xcodebuild test \
+            -project GPTravel.xcodeproj \
+            -scheme GPTravel \
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
+            -only-testing:GPTravelUITests \
+            CODE_SIGNING_ALLOWED=NO \
+            -quiet
+      
+      - name: Show failed UI Tests
+        if: steps.ui_tests.outcome == 'failure'
+        run: |
+          echo "❌ FAILED UI TESTS:"
+          xcodebuild test \
+            -project GPTravel.xcodeproj \
+            -scheme GPTravel \
+            -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
+            -only-testing:GPTravelUITests \
+            CODE_SIGNING_ALLOWED=NO \
+            -verbose 2>&1 | grep -E "error:|failed:|Test case.*failed" || true
+          exit 1
+
+      - name: All tests passed
+        if: steps.unit_tests.outcome == 'success' && steps.ui_tests.outcome == 'success'
+        run: echo "✅ All tests passed successfully!"
