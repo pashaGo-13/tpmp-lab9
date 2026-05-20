@@ -19,7 +19,6 @@ jobs:
             -project GPTravel.xcodeproj \
             -scheme GPTravel \
             -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
-            -only-testing:GPTravelTests \
             CODE_SIGNING_ALLOWED=NO
 
       - name: Run UI Tests
@@ -28,5 +27,4 @@ jobs:
             -project GPTravel.xcodeproj \
             -scheme GPTravel \
             -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
-            -only-testing:GPTravelUITests \
             CODE_SIGNING_ALLOWED=NO
