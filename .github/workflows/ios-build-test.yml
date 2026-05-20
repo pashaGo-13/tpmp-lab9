@@ -14,51 +14,19 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run Unit Tests
-        id: unit_tests
-        continue-on-error: true
         run: |
           xcodebuild test \
             -project GPTravel.xcodeproj \
             -scheme GPTravel \
             -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
             -only-testing:GPTravelTests \
-            CODE_SIGNING_ALLOWED=NO > unit_test_log.txt 2>&1
-          
-          cat unit_test_log.txt
-      
-      - name: Check Unit Tests
-        if: steps.unit_tests.outcome == 'failure'
-        run: |
-          echo "========================================="
-          echo "❌ UNIT TESTS FAILED"
-          echo "========================================="
-          echo "Last 50 lines of log:"
-          tail -50 unit_test_log.txt
-          exit 1
+            CODE_SIGNING_ALLOWED=NO
 
       - name: Run UI Tests
-        id: ui_tests
-        continue-on-error: true
         run: |
           xcodebuild test \
             -project GPTravel.xcodeproj \
             -scheme GPTravel \
             -destination 'platform=iOS Simulator,name=iPhone 16,OS=18.5' \
             -only-testing:GPTravelUITests \
-            CODE_SIGNING_ALLOWED=NO > ui_test_log.txt 2>&1
-          
-          cat ui_test_log.txt
-      
-      - name: Check UI Tests
-        if: steps.ui_tests.outcome == 'failure'
-        run: |
-          echo "========================================="
-          echo "❌ UI TESTS FAILED"
-          echo "========================================="
-          echo "Last 50 lines of log:"
-          tail -50 ui_test_log.txt
-          exit 1
-
-      - name: Success
-        if: steps.unit_tests.outcome == 'success' && steps.ui_tests.outcome == 'success'
-        run: echo "✅ All tests passed!"
+            CODE_SIGNING_ALLOWED=NO
